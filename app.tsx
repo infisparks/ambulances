@@ -4,12 +4,6 @@ import { Shield, Phone, Heart, Zap, AlertTriangle, MapPin, Clock, Users, CheckCi
 function App() {
   // State for pricing toggle (no longer used, but keeping useState import for future flexibility)
 
-  // Accident Location from the prompt
-  const accedentLocation = {
-    lat: "19.1909161000",
-    long: "72.8348875000"
-  };
-
   const problemStats = [
     {
       number: "5L+",
@@ -344,34 +338,6 @@ function App() {
         </div>
       </section>
 
-      {/* Displaying Accident Location (New Section) */}
-      <section id="accident-location" className="py-16 bg-gradient-to-br from-indigo-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-100 text-blue-700 font-semibold mb-8">
-            <MapPin className="w-5 h-5 mr-2" />
-            Detected Accident Location
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            Latest Accident Coordinates
-          </h2>
-          <div className="bg-white rounded-3xl p-8 shadow-2xl inline-block">
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
-              <div className="flex items-center space-x-2 text-gray-700 text-xl">
-                <span className="font-semibold">Latitude:</span>
-                <span className="text-gray-900 font-bold">{accedentLocation.lat}</span>
-              </div>
-              <div className="flex items-center space-x-2 text-gray-700 text-xl">
-                <span className="font-semibold">Longitude:</span>
-                <span className="text-gray-900 font-bold">{accedentLocation.long}</span>
-              </div>
-            </div>
-            <p className="text-sm text-gray-500 mt-4">
-              These coordinates represent the location of the most recently recorded accident.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Features Section */}
       <section id="features" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -454,10 +420,10 @@ function App() {
                           {step.step}
                         </div>
                         <h3 className="text-2xl md:text-3xl font-bold text-gray-900">{step.title}</h3>
-                      </div> {/* Moved title inside this div for better alignment */}
-                      <p className="text-lg text-gray-600 leading-relaxed">{step.description}</p>
-                      <div className="bg-gradient-to-r from-purple-100 to-blue-100 rounded-xl p-4">
-                        <p className="text-sm font-semibold text-purple-700">{step.details}</p>
+                        <p className="text-lg text-gray-600 leading-relaxed">{step.description}</p>
+                        <div className="bg-gradient-to-r from-purple-100 to-blue-100 rounded-xl p-4">
+                          <p className="text-sm font-semibold text-purple-700">{step.details}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
